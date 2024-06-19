@@ -1,5 +1,7 @@
 # WeightTrackerApp
+
 July 2024 Update
+
 The weight-tracking app is running very well. 
 
 A TODO project to complete
