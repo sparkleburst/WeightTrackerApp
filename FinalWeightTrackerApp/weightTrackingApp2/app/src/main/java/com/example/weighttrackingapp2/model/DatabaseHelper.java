@@ -12,6 +12,13 @@ import com.example.weighttrackingapp2.util.EmailValidator;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.math.BigInteger;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Name of the database
@@ -98,13 +105,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Check if an email and password combination exists in the AllUsers table
-    public Boolean checkEmailPassword(String email, String password) {
+    public boolean checkEmailPassword(String email, String password) {
         if (!isValidEmail(email)) {
             return false;
         }
-        try (SQLiteDatabase MyDatabase = this.getReadableDatabase();
-             Cursor cursor = MyDatabase.rawQuery("SELECT 1 FROM AllUsers WHERE email = ? AND password = ?", new String[]{email, password})) {
-            return cursor != null && cursor.getCount() > 0;
+        try {
+            String hash = secureHashPassword(password, email);
+            SQLiteDatabase db = this.getReadableDatabase();
+            try (Cursor cursor = db.rawQuery("SELECT 1 FROM AllUsers WHERE email = ? AND password = ?", new String[]{email, hash})) {
+                return cursor != null && cursor.getCount() > 0;
+            }
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+            e.printStackTrace(); // Handle or log the exception appropriately
+            return false; // Return false in case of hashing error
         }
     }
 
@@ -186,5 +199,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Validate email format
     private boolean isValidEmail(String email) {
         return email != null && EmailValidator.isValidEmail(email);
+    }
+
+    // Securely hash a password
+    public String secureHashPassword(String password, String salt)
+            throws NoSuchAlgorithmException, InvalidKeySpecException
+    {
+        int iterations = 4000;
+        int keyLength = 64 * 8;
+        char[] chars = password.toCharArray();
+        byte[] bSalt = salt.getBytes();
+        PBEKeySpec spec = new PBEKeySpec(chars, bSalt, iterations, keyLength);
+        SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+        byte[] hash = skf.generateSecret(spec).getEncoded();
+        BigInteger bi = new BigInteger(1, hash);
+        return bi.toString(16);
     }
 }

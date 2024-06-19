@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.weighttrackingapp2.model.DatabaseHelper;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
 public class SignupViewModel extends ViewModel {
     private DatabaseHelper databaseHelper;
 
@@ -45,10 +48,18 @@ public class SignupViewModel extends ViewModel {
             return 4; // User already exists
         }
 
+        String hash;
+
+        try {
+            hash = databaseHelper.secureHashPassword(password, email);
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+            return 2; // Invalid password
+        }
+
         // Insert the new user data into the database
         ContentValues contentValues = new ContentValues();
         contentValues.put("email", email);
-        contentValues.put("password", password);
+        contentValues.put("password", hash);
         if (databaseHelper.insertData("AllUsers", contentValues)) {
             return 5; // Signup successful
         } else {
