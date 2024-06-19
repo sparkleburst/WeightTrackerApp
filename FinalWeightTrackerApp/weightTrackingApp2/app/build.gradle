@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application' // Apply the Android application plugin for building Android apps
+}
+
+android {
+    namespace 'com.example.weighttrackingapp2' // Define the namespace for the Android application package
+
+    compileSdk 34 // Compile SDK version used for building the app
+
+    defaultConfig {
+        applicationId "com.example.weighttrackingapp2" // Package name of the application
+        minSdk 28 // Minimum supported SDK version
+        //noinspection EditedTargetSdkVersion
+        targetSdk 34 // Target SDK version
+        versionCode 1 // Version code for the app
+        versionName "1.0" // Version name for the app
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" // Instrumentation runner for testing
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false // Disable code shrinking for release builds
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // ProGuard configuration files for obfuscating code
+        }
+    }
+
+    buildFeatures {
+        viewBinding true // Enable view binding for the project
+        dataBinding true // Enable data binding for the project
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8 // Java source compatibility version
+        targetCompatibility JavaVersion.VERSION_1_8 // Java target compatibility version
+    }
+
+    // testOptions {unitTests.returnDefaultValues = true}
+}
+
+dependencies {
+    // AndroidX Libraries
+    implementation 'androidx.appcompat:appcompat:1.7.0' // Support for modern Android UI components
+    implementation 'com.google.android.material:material:1.12.0' // Material Design components for Android
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Layout manager for Android applications
+
+    // Unit Testing Dependencies
+    testImplementation 'junit:junit:4.13.2' // JUnit framework for unit tests
+    testImplementation 'org.mockito:mockito-core:3.12.4' // Mockito for mocking objects
+    testImplementation 'org.mockito:mockito-inline:3.12.4' // Inline version of Mockito for mocking final classes and methods
+    testImplementation 'org.robolectric:robolectric:4.12.2' // Robolectric for unit testing Android components
+
+    // Android Testing Dependencies
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // JUnit extension for Android tests
+    androidTestImplementation 'androidx.test:core:1.5.0' // Core testing library for Android tests
+    androidTestImplementation 'androidx.test:rules:1.5.0' // Rules for Android testing
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // Espresso for UI testing
+}

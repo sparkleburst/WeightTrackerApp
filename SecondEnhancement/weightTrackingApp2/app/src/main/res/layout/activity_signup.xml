@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Made by Max Gilhespy-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/hex_back_rotated"
+    tools:context=".view.SignupActivity">
+
+    <!--<a href="https://www.freepik.com/free-vector/
+    dark-hexagonal-background-with-gradient-color_12804207.
+    htm#query=android%20background&position=2&from_view=search&track=ais">
+    Image by coolvector</a> on Freepik-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:text="WELCOME"
+            android:layout_gravity="center"
+            android:textSize="48sp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/lavender"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:text="WEIGHT TRACKERS"
+            android:layout_gravity="center"
+            android:textSize="36sp"
+            android:textColor="@color/lavender"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:text="SIGN UP"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:textSize="36sp"
+            android:textColor="@color/lavender"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_email"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_password"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_confirm"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_baseline_password_24"
+                android:drawablePadding="8dp"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:text="Sign Up"
+                android:id="@+id/signup_button"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                app:cornerRadius = "30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginRedirectText"
+                android:text="Already a user? Login"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/lavender"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+</layout>

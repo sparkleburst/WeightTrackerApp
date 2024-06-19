@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/hex_back_rotated"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/current_weight"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Current Weight: "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/lavender" />
+
+    <TextView
+        android:id="@+id/weight_goal"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Current Goal: "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/lavender" />
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Progress: "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/lavender" />
+
+    <LinearLayout
+        android:id="@+id/tables_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/previous_page_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:enabled="false"
+            android:text="Previous Page" />
+
+        <Button
+            android:id="@+id/next_page_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Next Page" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/change_goal_text"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Change Current Goal"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_blue_light" />
+
+    <TextView
+        android:id="@+id/change_weight_text"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Change Current Weight"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_blue_light" />
+
+</LinearLayout>
