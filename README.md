@@ -1,4 +1,7 @@
 # WeightTrackerApp
+July 2024 Update
+The weight-tracking app is running very well. 
+
 A TODO project to complete
 
 This app was designed to help anyone keep track of their weight and to be able to compare it to a goal weight.
