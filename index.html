@@ -20,11 +20,11 @@
             height: auto; /* Maintain aspect ratio */
         }
         .carousel {
-            width: 100%; /* Set carousel width to full viewport width */
+            max-width: 100%; /* Set carousel width to full viewport width */
             margin: 0 auto; /* Center the carousel */
         }
         .carousel-control-prev, .carousel-control-next {
-            width: 5%; /* Adjust width to position the arrows closer to the image */
+            width: 5%; /* Adjust width for mobile screens */
         }
         .carousel-control-prev-icon, .carousel-control-next-icon {
             background-color: black; /* Change the color of the arrows to black */
@@ -48,13 +48,14 @@
         /* Media Query for Desktop Screens */
         @media (min-width: 992px) {
             .carousel-control-prev, .carousel-control-next {
-                width: 10%; /* Adjust width for desktop screens */
+                width: 3%; /* Adjust width for desktop screens */
             }
             .carousel {
                 max-width: 800px; /* Limit maximum width of carousel on desktop */
             }
             .video-container {
                 max-width: 800px; /* Limit maximum width of video container on desktop */
+                height: 450px; /* Adjust height for desktop view to prevent excessive height */
             }
         }
     </style>
