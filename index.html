@@ -47,10 +47,21 @@
 
         /* Media Query for Desktop Screens */
         @media (min-width: 992px) {
+            .video-container {
+                padding-bottom: 0; /* Remove the padding-bottom to allow custom height */
+                height: 400px; /* Set a fixed height for the video container on desktop */
+                max-width: 50%; /* Limit the width of the video container to half of the viewport */
+                margin: 0 auto; /* Center the video horizontally */
+            }
+
+            /* Adjusting the carousel size */
             .carousel {
-                max-width: 25%; /* Limit the width of the carousel to 25% of viewport */
-                max-height: 25vh; /* Limit the height of the carousel to 25% of viewport height */
-                margin: 0 auto; /* Center the carousel horizontally */
+                max-width: 50%; /* Limit maximum width of carousel on desktop */
+                height: 50%; /* Adjust height for desktop view */
+            }
+            .carousel-inner img {
+                width: 100%; /* Ensure images span full width */
+                height: 100%; /* Ensure images span full height */
             }
         }
     </style>
