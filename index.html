@@ -47,15 +47,13 @@
 
         /* Media Query for Desktop Screens */
         @media (min-width: 992px) {
-            .carousel-control-prev, .carousel-control-next {
-                width: 3%; /* Adjust width for desktop screens */
-            }
-            .carousel {
-                max-width: 800px; /* Limit maximum width of carousel on desktop */
-            }
             .video-container {
-                max-width: 800px; /* Limit maximum width of video container on desktop */
-                height: 450px; /* Adjust height for desktop view to prevent excessive height */
+                padding-bottom: 0; /* Remove the padding-bottom to allow custom height */
+                height: 400px; /* Set a fixed height for the video container on desktop */
+            }
+            .video-container iframe {
+                width: 100%; /* Ensure the video fills the container */
+                height: 100%; /* Maintain the video's aspect ratio */
             }
         }
     </style>
