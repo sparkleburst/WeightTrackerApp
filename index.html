@@ -45,12 +45,22 @@
         height: 100%; /* Maintain the video's aspect ratio */
     }
 
-    /* Media Query for Desktop Screens */
-    @media (min-width: 992px) {
-        .video-container {
-            max-width: 60%; /* Set max-width for video container */
-            margin: 0 auto; /* Center the container horizontally */
-        }
+/* Media Query for Desktop Screens */
+@media (min-width: 992px) {
+    .video-container {
+        max-width: 60%; /* Set max-width for video container */
+        padding-bottom: 33.75%; /* Adjust the padding-bottom to maintain 16:9 aspect ratio */
+        margin: 0 auto; /* Center the container horizontally */
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Ensure the video fills the container */
+        height: 100%; /* Maintain the video's aspect ratio */
+    }
+
 
         .carousel {
             max-width: 20%; /* Reduce carousel width to 20% of viewport width */
