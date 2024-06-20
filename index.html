@@ -47,18 +47,14 @@
 
     /* Media Query for Desktop Screens */
     @media (min-width: 992px) {
-        .video-container iframe {
-            width: 60%; /* Set iframe width to 60% of its container */
-            height: auto; /* Maintain aspect ratio */
-            margin: 0 auto; /* Center horizontally */
-            display: block; /* Ensure it's displayed as a block element */
+        .video-container {
+            max-width: 60%; /* Set max-width for video container */
+            margin: 0 auto; /* Center the container horizontally */
         }
-        
+
         .carousel {
-            max-width: 20%; /* Reduce carousel width to 70% of viewport width */
-        }
-        .carousel-inner img {
-            height: auto; /* Ensure images maintain aspect ratio */
+            max-width: 20%; /* Reduce carousel width to 20% of viewport width */
+            margin: 0 auto; /* Center the carousel */
         }
     }
 </style>
