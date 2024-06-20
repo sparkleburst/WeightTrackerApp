@@ -41,22 +41,17 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Ensure the video fills the container */
+            height: 100%; /* Maintain the video's aspect ratio */
         }
 
         /* Media Query for Desktop Screens */
         @media (min-width: 992px) {
-            .carousel-control-prev, .carousel-control-next {
-                width: 3%; /* Adjust width for desktop screens */
-            }
-            .carousel {
-                max-width: 40%; /* Limit maximum width of carousel on desktop */
-                max-height: 40vh; /* Limit maximum height of carousel on desktop */
-            }
             .video-container {
-                max-width: 800px; /* Limit maximum width of video container on desktop */
-                height: 450px; /* Adjust height for desktop view to prevent excessive height */
+                padding-bottom: 0; /* Remove the padding-bottom to allow custom height */
+                height: 400px; /* Set a fixed height for the video container on desktop */
+                max-width: 50%; /* Limit the width of the video container to half of the viewport */
+                margin: 0 auto; /* Center the video horizontally */
             }
         }
     </style>
