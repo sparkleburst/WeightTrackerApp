@@ -10,9 +10,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .carousel-inner img {
-            width: 100%; /* Ensures the image takes up the full width of its container */
-            height: 500px; /* Set the desired height */
-            object-fit: cover; /* Ensures the image covers the entire container */
+            width: auto; /* Ensure the image doesn't stretch to fill the width */
+            max-height: 500px; /* Set the max height */
+            object-fit: contain; /* Ensure the whole image fits inside the container */
+            margin: 0 auto; /* Center the image horizontally */
         }
     </style>
 </head>
