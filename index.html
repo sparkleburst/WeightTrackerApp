@@ -8,66 +8,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        .section {
-            border: 16px solid lavender; /* Lavender border */
-            padding: 20px; /* Add some padding for better look */
-            margin-bottom: 20px; /* Add some space between sections */
-            border-radius: 5px; /* Rounded corners */
+<style>
+    .section {
+        border: 16px solid lavender; /* Lavender border */
+        padding: 20px; /* Add some padding for better look */
+        margin-bottom: 20px; /* Add some space between sections */
+        border-radius: 5px; /* Rounded corners */
+    }
+    .carousel-inner img {
+        width: 100%; /* Ensure the image spans the full width of its container */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .carousel {
+        max-width: 100%; /* Set carousel width to full viewport width */
+        margin: 0 auto; /* Center the carousel */
+    }
+    .carousel-control-prev, .carousel-control-next {
+        width: 5%; /* Adjust width for mobile screens */
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: black; /* Change the color of the arrows to black */
+        background-size: 100%, 100%; /* Ensure the entire icon is colored */
+    }         
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive sizing */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }        
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Ensure the video fills the container */
+        height: 100%; /* Maintain the video's aspect ratio */
+    }
+
+    /* Media Query for Desktop Screens */
+    @media (min-width: 992px) {
+        .video-container iframe {
+            width: 60%; /* Set iframe width to 60% of its container */
+            height: auto; /* Maintain aspect ratio */
+            margin: 0 auto; /* Center horizontally */
+            display: block; /* Ensure it's displayed as a block element */
+        }
+        
+        .carousel {
+            max-width: 20%; /* Reduce carousel width to 70% of viewport width */
         }
         .carousel-inner img {
-            width: 100%; /* Ensure the image spans the full width of its container */
-            height: auto; /* Maintain aspect ratio */
+            height: auto; /* Ensure images maintain aspect ratio */
         }
-        .carousel {
-            max-width: 100%; /* Set carousel width to full viewport width */
-            margin: 0 auto; /* Center the carousel */
-        }
-        .carousel-control-prev, .carousel-control-next {
-            width: 5%; /* Adjust width for mobile screens */
-        }
-        .carousel-control-prev-icon, .carousel-control-next-icon {
-            background-color: black; /* Change the color of the arrows to black */
-            background-size: 100%, 100%; /* Ensure the entire icon is colored */
-        }         
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive sizing */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-        }        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Ensure the video fills the container */
-            height: 100%; /* Maintain the video's aspect ratio */
-        }
-
-        /* Media Query for Desktop Screens */
-        @media (min-width: 992px) {
-            .video-container iframe {
-                width: 75%; /* Set iframe width to 60% of its container */
-                height: 75vh; /* Set a fixed height relative to viewport height */
-                max-height: 400px; /* Set maximum height */
-                margin: 0 auto; /* Center horizontally */
-                display: block; /* Ensure it's displayed as a block element */
-                
-        /* Media Query for Desktop Screens */
-        @media (min-width: 992px) {
-            .carousel {
-                max-width: 20%; /* Reduce carousel width to 70% of viewport width */
-            }
-            .carousel-inner img {
-                height: auto; /* Ensure images maintain aspect ratio */
-            }
-        }
-
     }
-}
-        
-    </style>
+</style>
+    
 </head>
 <body>
     <div class="section">
