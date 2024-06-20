@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .section {
-            border: 20px solid violet; /* Violet border */
+            border: 2px solid lavender; /* Lavender border */
             padding: 20px; /* Add some padding for better look */
             margin-bottom: 20px; /* Add some space between sections */
             border-radius: 5px; /* Optional: rounded corners */
@@ -20,6 +20,19 @@
             max-height: 500px; /* Set the max height */
             object-fit: contain; /* Ensure the whole image fits inside the container */
             margin: 0 auto; /* Center the image horizontally */
+        }
+        .carousel-control-prev, .carousel-control-next {
+            width: 5%; /* Adjust width to position the arrows closer to the image */
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: black; /* Change the color of the arrows to black */
+            background-size: 100%, 100%; /* Ensure the entire icon is colored */
+        }
+        .carousel-control-prev {
+            left: 10%; /* Position the left arrow closer to the image */
+        }
+        .carousel-control-next {
+            right: 10%; /* Position the right arrow closer to the image */
         }
     </style>
 </head>
