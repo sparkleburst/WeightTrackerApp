@@ -47,6 +47,15 @@
 
         /* Media Query for Desktop Screens */
         @media (min-width: 992px) {
+            .video-container iframe {
+                width: 75%; /* Set iframe width to 60% of its container */
+                height: 75vh; /* Set a fixed height relative to viewport height */
+                max-height: 400px; /* Set maximum height */
+                margin: 0 auto; /* Center horizontally */
+                display: block; /* Ensure it's displayed as a block element */
+                
+        /* Media Query for Desktop Screens */
+        @media (min-width: 992px) {
             .carousel {
                 max-width: 20%; /* Reduce carousel width to 70% of viewport width */
             }
@@ -54,6 +63,10 @@
                 height: auto; /* Ensure images maintain aspect ratio */
             }
         }
+
+    }
+}
+        
     </style>
 </head>
 <body>
