@@ -47,21 +47,11 @@
 
         /* Media Query for Desktop Screens */
         @media (min-width: 992px) {
-            .video-container {
-                padding-bottom: 0; /* Remove the padding-bottom to allow custom height */
-                height: 400px; /* Set a fixed height for the video container on desktop */
-                max-width: 50%; /* Limit the width of the video container to half of the viewport */
-                margin: 0 auto; /* Center the video horizontally */
-            }
-
             .carousel {
-                max-width: 30%; /* Adjust the maximum width of the carousel for desktop */
-                margin: 0 auto; /* Center the carousel horizontally */
+                max-width: 70%; /* Reduce carousel width to 70% of viewport width */
             }
-
             .carousel-inner img {
-                max-width: 100%; /* Ensure images inside carousel maintain responsiveness */
-                height: auto; /* Allow images to adjust height according to width */
+                height: auto; /* Ensure images maintain aspect ratio */
             }
         }
     </style>
